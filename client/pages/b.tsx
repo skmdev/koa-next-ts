@@ -1,32 +1,32 @@
 import React from 'react';
 import { inject, observer } from 'mobx-react';
 import Clock from '../components/Clock';
-import Model from '../../client/models';
+import Store from '../../client/stores';
 
 interface IProps {
-  model: Model;
+  store: Store;
 }
 
-@inject('model')
+@inject('store')
 @observer
 class B extends React.Component<IProps> {
   componentDidMount() {
-    this.props.model.start();
+    this.props.store.clock.start();
   }
 
   componentWillUnmount() {
-    this.props.model.stop();
+    this.props.store.clock.stop();
   }
 
   public render() {
     return (
       <div>
-        <button onClick={this.props.model.counter.add}>+</button>
-        {this.props.model.counter.count}
-        <button onClick={this.props.model.counter.minus}>-</button>
+        <button onClick={this.props.store.counter.add}>+</button>
+        {this.props.store.counter.count}
+        <button onClick={this.props.store.counter.minus}>-</button>
         <Clock
-          lastUpdate={this.props.model.lastUpdate}
-          light={this.props.model.light}
+          lastUpdate={this.props.store.clock.lastUpdate}
+          light={this.props.store.clock.light}
         />
       </div>
     );

@@ -1,11 +1,11 @@
 import App, { Container } from 'next/app';
 import React from 'react';
-import Model, { initializeStore } from '../models';
+import Store, { initializeStore } from '../stores';
 import { Provider } from 'mobx-react';
 import { isServer } from '../../common/utils';
 
 class MyMobxApp extends App {
-  mobxModel: Model;
+  mobxStore: Store;
   static async getInitialProps(appContext) {
     // Get or Create the store with `undefined` as initialState
     // This allows you to set a custom default initialState
@@ -24,7 +24,7 @@ class MyMobxApp extends App {
   constructor(props) {
     super(props);
     // const isServer = typeof window === 'undefined'
-    this.mobxModel = isServer()
+    this.mobxStore = isServer()
       ? props.initialMobxState
       : initializeStore(props.initialMobxState);
   }
@@ -33,7 +33,7 @@ class MyMobxApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <Provider model={this.mobxModel}>
+        <Provider store={this.mobxStore}>
           <Component {...pageProps} />
         </Provider>
       </Container>
