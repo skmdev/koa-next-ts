@@ -1,8 +1,9 @@
 import { createServer } from 'http';
 import { parse } from 'url';
 import next from 'next';
+import Config from '../config';
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+const port = Config.port;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev, dir: './client' });
 const handle = app.getRequestHandler();
