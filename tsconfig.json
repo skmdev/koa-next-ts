@@ -31,7 +31,8 @@
     ]
   },
   "include": [
-    "src/**/*",
+    "client/**/*",
+    "server/**/*"
   ],
   "exclude": [
     "test"
