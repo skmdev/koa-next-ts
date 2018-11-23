@@ -4,7 +4,7 @@ import next from 'next';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev, dir: './' });
+const app = next({ dev, dir: './client' });
 const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
@@ -14,9 +14,11 @@ app.prepare().then(() => {
 
     if (pathname === '/a') {
       console.log('22s');
-      app.render(req, res, '/aaa/pages/a', query);
+      app.render(req, res, '/a', query);
     } else if (pathname === '/b') {
-      app.render(req, res, '/aaa/pages/b', query);
+      app.render(req, res, '/b', query);
+    } else if (pathname === '/') {
+      app.render(req, res, '/', query);
     } else {
       handle(req, res, parsedUrl);
     }

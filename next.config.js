@@ -18,6 +18,7 @@ module.exports = withPlugins([
     }
   ],
   {
-    useFileSystemPublicRoutes: false
+    useFileSystemPublicRoutes: false,
+    distDir: '../.next'
   }
 ]);
