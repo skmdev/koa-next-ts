@@ -2,6 +2,8 @@ import React from 'react';
 import { inject, observer } from 'mobx-react';
 import Clock from '../components/Clock';
 import Store from '../../client/stores';
+import { Button } from 'antd';
+import Link from 'next/link';
 
 interface IProps {
   store: Store;
@@ -21,6 +23,9 @@ class B extends React.Component<IProps> {
   public render() {
     return (
       <div>
+        <Link href="/" as="/">
+          <Button>Home</Button>
+        </Link>
         <button onClick={this.props.store.counter.add}>+</button>
         {this.props.store.counter.count}
         <button onClick={this.props.store.counter.minus}>-</button>

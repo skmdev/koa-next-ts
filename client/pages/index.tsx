@@ -1,16 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
+import { Button } from 'antd';
 
 export default () => (
   <ul>
     <li>
       <Link href="/a" as="/a">
-        <a>a</a>
+        <Button>a</Button>
       </Link>
     </li>
     <li>
       <Link href="/b" as="/b">
-        <a>b</a>
+        <Button>b</Button>
+      </Link>
+    </li>
+    <li>
+      <Link href="/cc" as="/cc">
+        <Button>b</Button>
       </Link>
     </li>
   </ul>

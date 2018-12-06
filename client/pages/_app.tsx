@@ -4,6 +4,8 @@ import Store, { initializeStore } from '../stores';
 import { Provider } from 'mobx-react';
 import { isServer } from '../../common/utils';
 
+import '../asserts/styles.less';
+
 class MyMobxApp extends App {
   mobxStore: Store;
   static async getInitialProps(appContext) {
@@ -17,7 +19,7 @@ class MyMobxApp extends App {
 
     return {
       ...appProps,
-      initialMobxState: mobxStore
+      initialMobxState: mobxStore,
     };
   }
 
