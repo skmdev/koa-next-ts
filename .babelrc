@@ -4,21 +4,42 @@
       "presets": ["next/babel", "@zeit/next-typescript/babel"],
       "plugins": [
         ["@babel/plugin-proposal-decorators", { "legacy": true }],
-        ["@babel/plugin-proposal-class-properties", { "loose": true }]
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "style": true
+          }
+        ]
       ]
     },
     "production": {
       "presets": ["next/babel", "@zeit/next-typescript/babel"],
       "plugins": [
         ["@babel/plugin-proposal-decorators", { "legacy": true }],
-        ["@babel/plugin-proposal-class-properties", { "loose": true }]
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "style": true
+          }
+        ]
       ]
     },
     "test": {
       "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }], "@zeit/next-typescript/babel"],
       "plugins": [
         ["@babel/plugin-proposal-decorators", { "legacy": true }],
-        ["@babel/plugin-proposal-class-properties", { "loose": true }]
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        [
+          "import",
+          {
+            "libraryName": "antd",
+            "style": true
+          }
+        ]
       ]
     }
   }
