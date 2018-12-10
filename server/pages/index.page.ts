@@ -11,6 +11,12 @@ class ReactPage {
     ctx.respond = false;
   }
 
+  @Route.get('/')
+  public static async renderIndex(ctx: Context) {
+    await ctx.next.render(ctx.req, ctx.res, '/', ctx.query);
+    ctx.respond = false;
+  }
+
   @Route.get('/a')
   public static async renderA(ctx: Context) {
     await ctx.next.render(ctx.req, ctx.res, '/a', ctx.query);
