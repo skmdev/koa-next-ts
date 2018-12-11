@@ -19,12 +19,12 @@ class Server extends Koa {
       })
     );
 
-    await this.applyMiddleware();
+    this.applyMiddleware();
 
     return this;
   }
 
-  async applyMiddleware() {
+  applyMiddleware() {
     this.use(bodyParser());
     this.use(async (ctx, next) => {
       ctx.res.statusCode = 200;
