@@ -31,7 +31,6 @@ class Server extends Koa {
       await next();
     });
     for (const router of this.routers) {
-      console.log(router);
       this.use(router.routes());
       this.use(router.allowedMethods());
     }

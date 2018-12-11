@@ -1,10 +1,24 @@
 import App, { Container } from 'next/app';
+import Router from 'next/router';
+
 import React from 'react';
+
 import Store, { initializeStore } from '../stores';
 import { Provider } from 'mobx-react';
 import { isServer } from '../../common/utils';
 
-import '../asserts/styles.less';
+import './index.less';
+
+// Temperatly fix the route missing style problem
+Router.events.on('routeChangeComplete', () => {
+  if (process.env.NODE_ENV !== 'production') {
+    const els: any = document.querySelectorAll(
+      'link[href*="/_next/static/css/styles.chunk.css"]'
+    );
+    const timestamp = new Date().valueOf();
+    els[0].href = '/_next/static/css/styles.chunk.css?v=' + timestamp;
+  }
+});
 
 class MyMobxApp extends App {
   mobxStore: Store;

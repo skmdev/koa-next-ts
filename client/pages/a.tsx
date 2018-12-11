@@ -1,8 +1,7 @@
 import React from 'react';
-import style from './index.less';
+import style from './aa.less';
 
-import { Button } from 'antd';
-console.log(style);
+// import { Button } from 'antd';
 export default () => (
   <div className={style.aa}>ssss{/* <Button>aa</Button> */}</div>
 );
