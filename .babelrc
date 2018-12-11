@@ -29,7 +29,19 @@
       ]
     },
     "test": {
-      "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }], "@zeit/next-typescript/babel"],
+      "exclude": ["@babel/plugin-transform-classes"],
+      "presets": [
+        [ 
+          "next/babel", 
+          { 
+            "preset-env": { 
+              "modules": "commonjs",
+              "targets": { "node": "current" }
+            }
+          }
+        ], 
+        "@zeit/next-typescript/babel"
+      ],
       "plugins": [
         ["@babel/plugin-proposal-decorators", { "legacy": true }],
         ["@babel/plugin-proposal-class-properties", { "loose": true }],
