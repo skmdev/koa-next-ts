@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server/index.ts",
-    "build:next": "next build && tsc --project tsconfig.server.json",
+    "build:next": "next build client && tsc --project tsconfig.server.json",
     "start": "NODE_ENV=production node .next/production-server/server/index.js"
   },
   "repository": {
@@ -19,23 +19,34 @@
   },
   "homepage": "https://github.com/skmdev/koa-next-ts#readme",
   "dependencies": {
+    "@types/koa-router": "^7.0.35",
+    "antd": "^3.11.2",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-decorator-ts": "^2.5.3",
+    "mobx": "^5.6.0",
+    "mobx-react": "^5.4.2",
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.6",
+    "@types/koa": "^2.0.47",
+    "@types/koa-bodyparser": "^4.2.1",
+    "@types/next": "^7.0.1",
+    "@types/react": "^16.7.7",
     "@zeit/next-less": "^1.0.1",
     "@zeit/next-typescript": "1.1.1",
     "babel-loader": "^8.0.4",
-    "koa": "^2.6.2",
-    "next": "^7.0.2",
+    "babel-plugin-import": "^1.11.0",
+    "less": "^3.8.1",
     "next-compose-plugins": "^2.1.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "typescript": "^3.1.6",
-    "typescript-babel-jest": "^1.0.5"
-  },
-  "devDependencies": {
-    "@types/koa": "^2.0.47",
-    "@types/next": "^7.0.1",
-    "@types/react": "^16.7.7",
     "nodemon": "^1.18.4",
-    "ts-node": "^7.0.1"
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2",
+    "typescript-babel-jest": "^1.0.5"
   }
 }
