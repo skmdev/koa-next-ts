@@ -6,7 +6,7 @@
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
-    "lib": ["dom", "es2017"],
+    "lib": ["dom", "esnext"],
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "noUnusedLocals": true,
