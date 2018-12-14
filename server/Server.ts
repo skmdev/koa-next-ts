@@ -8,14 +8,14 @@ class Server extends Koa {
   async init() {
     this.routers.push(
       new Router({
-        dir: '/server/controllers/',
+        dir: `${__dirname}/controllers/`,
         prefix: '/api',
       })
     );
 
     this.routers.push(
       new Router({
-        dir: `/server/pages/`,
+        dir: `${__dirname}/pages/`,
       })
     );
 
